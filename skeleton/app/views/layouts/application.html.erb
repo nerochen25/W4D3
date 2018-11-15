@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
     <title>NinetyNineCats</title>
     <%= csrf_meta_tags %>
 
@@ -9,6 +10,12 @@
   </head>
 
   <body>
+    <header>
+      <% if current_user %>
+        <h1><% current_user.user_name %></h1>
+      <% end %>
+    </header>
     <%= yield %>
+    
   </body>
 </html>
